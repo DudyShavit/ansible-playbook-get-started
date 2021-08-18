@@ -1,9 +1,10 @@
 ---
 
 - name: Ensure get packages are installed.
+  become: true
   hosts: localhost
   tasks:
-  - apt: name=batdsdsad state=latest
+  - apt: name=bat state=latest
   - apt: 
       name: jq
       state: latest
