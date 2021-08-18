@@ -1,0 +1,15 @@
+---
+
+- name: Ensure ~/.gitconfig copied from master.gitconfig
+  hosts: localhost
+  tasks:
+  - copy: src="../adhoc/master.gitconfig" dest="~/.gitconfig" 
+
+- name: Ensure get packages are installed.
+  hosts: localhost
+  tasks:
+  - apt: name=bat state=latest
+  - apt: 
+      name: jq
+      state: latest
+
